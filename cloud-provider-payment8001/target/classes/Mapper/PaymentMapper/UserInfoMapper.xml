@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zxd.Dao.UserInfoDao.UserInfoDao">
+    <resultMap id="BaseResultMap" type="User">
+        <id column="id" property="id" jdbcType="BIGINT"></id>
+        <result column="username" property="userName" jdbcType="VARCHAR"></result>
+        <result column="password" property="passWord" jdbcType="VARCHAR"></result>
+        <result column="age" property="age" jdbcType="VARCHAR"></result>
+    </resultMap>
+    <select id="getUserById" parameterType="Long" resultMap="BaseResultMap">
+        select * from userInfo where id=#{id}
+    </select>
+    <insert id="addUserIndo" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+        insert into userInfo(username, `password`, age) values(#{userName}, #{passWord}, #{age})
+    </insert>
+</mapper>
