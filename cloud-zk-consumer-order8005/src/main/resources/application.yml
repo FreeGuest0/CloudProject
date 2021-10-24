@@ -1,0 +1,8 @@
+server:
+  port: 8005
+spring:
+  application:
+    name: cloud-zk-consumer-order8005
+  cloud:
+    zookeeper:
+      connect-string: 10.211.55.3:2181

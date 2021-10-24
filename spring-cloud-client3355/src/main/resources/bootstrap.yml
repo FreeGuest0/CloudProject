@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: cloud-config-client
+  cloud:
+    config:
+      label: master #分支名称
+      name: config #配置文件名称
+      profile: test #读取后缀名称 例:"config-dev"
+      uri: http://localhost:3344 #微服务中配置中心名称
